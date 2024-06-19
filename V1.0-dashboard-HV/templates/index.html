@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">{{ the_title }}</a>
+</nav>
+
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" id="javni-geoportal" class="sidebar-link">Javni Geoportal</a>
+        <a href="#" id="interni-geoportal-produkcija" class="sidebar-link">Interni Geoportal - produkcija</a>
+        <a href="#" id="interni-geoportal-test" class="sidebar-link">Interni Geoportal - test</a>
+        <a href="#" id="NIPP" class="sidebar-link">NIPP</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content">
+
+        <h1 id="dashboard-title" class="d-flex justify-content-between align-items-center">
+            <span>Pregled servisa izvora podataka</span>
+            <button id="exportButton" class="btn btn-primary">
+                <i class="bi bi-download"></i> Export Data
+            </button>
+        </h1>
+        <p class="icon-paragraph"><img src="./static/icons/dashboard_logo.png" alt="icon" style="width:50px;height:50px;">Welcome to the Dashboard - Health check overview.</p>
+
+        <!-- Progress Bar -->
+        <div id="progress-container" class="progress-container">
+            <div class="progress-bar" style="background-color: #f3f3f3;"></div>
+            <div class="progress-text">Loading Data...</div>
+        </div>
+
+        <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Geoserver Title <br><input type="text" id="searchTitle" placeholder="Search Title"></th>
+                    <th>Geoserver WMS name <br><input type="text" id="searchWMSName" placeholder="Search WMS Name"></th>
+                    <th>Geoportal Name <br><input type="text" id="searchGeoportalName" placeholder="Search Geoportal Name"></th>
+                    <th>Geoportal Topic <br><input type="text" id="searchGeoportalTopic" placeholder="Search Geoportal Topic"></th>
+                    <th>Geoserver Stores<br><input type="text" id="searchSource" placeholder="Search Source"></th>
+                    <th>Source<br><input type="text" id="searchServer" placeholder="Search Data"></th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Dynamic rows will be added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
