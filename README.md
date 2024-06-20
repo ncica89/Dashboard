@@ -6,5 +6,7 @@ v1.1 - repaired
 TODO:
 
 -REFACTOR PYTHON CODE
+
 -horizontal scrollbar always visible
+
 -set the minimum column width in the exported table
