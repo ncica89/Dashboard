@@ -4,6 +4,7 @@ v1.1 - repaired
 - the correct column names are set for the exported table
   
 TODO:
+
 -REFACTOR PYTHON CODE
 -horizontal scrollbar always visible
 -set the minimum column width in the exported table
