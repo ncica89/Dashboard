@@ -1,0 +1,198 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0; /* Remove default margin */
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-grow: 1; /* Ensure wrapper grows to fill available space */
+}
+
+.sidebar {
+    flex-basis: 260px;  /* Sets the initial main size of the flex item */
+    flex-shrink: 0;     /* Prevents the sidebar from shrinking */
+    flex-grow: 0;       /* Prevents the sidebar from growing */
+    background-color: #343a40;
+    padding-top: 20px;
+    overflow-y: auto; /* Always show vertical scrollbar */
+    overflow-x: auto; /* Always show horizontal scrollbar */
+}
+
+.sidebar a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    position: relative; /* Necessary for the arrow positioning */
+    padding-left: 30px; /* Added padding for space between the line and text */
+}
+
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    left: 15px; /* Positioning the line to the left */
+    top: 50%; /* Centering the line vertically */
+    height: 1px; /* Line height */
+    width: 10px; /* Line width */
+    background-color: white;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #59595A;
+    color: white;
+    text-decoration: none; /* Ensure no underline on hover and active */
+}
+
+.sidebar a.active::after {
+    content: ' ';
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg); /* Initial position of the arrow */
+    border: 10px solid transparent; /* Adjust size of the arrow */
+    border-left-color: white; /* Arrow color */
+}
+
+.navbar {
+    width: 100%; /* Fill full width of parent container */
+    flex-grow: 1; /* Allow navbar to grow */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.icon-image {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+}
+
+table input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Progress Bar */
+/* Progress Container */
+.progress-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Initially hide the progress container */
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border: 4px solid #E2E2E6; /* Light grey border */
+    border-top: 4px solid #3498db; /* Blue border for animation */
+    border-radius: 50%; /* Circle shape */
+    animation: spin 2s linear infinite; /* Rotate animation */
+}
+
+/* Rotate Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.progress-text {
+    text-align: center;
+    margin-top: 10px; /* Adjust as needed */
+    color: #333; /* Adjust text color as needed */
+    margin-left: -22px;
+}
+
+/* Export Button */
+#exportButton {
+    background-color: #3498db; /* Desired background color */
+}
+
+#exportButton:hover {
+    background-color: #2A7AAF; /* Desired hover background color */
+}
+
+.icon-paragraph {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Adjust the value for more or less space */
+}
+
+.icon-paragraph img {
+    margin-right: 10px; /* Adjust the value for more or less space */
+}
+
+/* Dropdown for toggling columns in table*/
+#toggleColumnsDropdown{
+    background-color:  transparent !important; /* Desired background color */
+    color: black;
+    border: none;
+}
+
+#toggleColumnsDropdown:hover {
+    background-color: #2A7AAF; /* Desired hover background color */
+}
+
+.hidden-column {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1600px) { /*size for laptop screen */
+
+    p {
+        font-size: 0.8em;
+    }
+
+    span {
+        font-size: 30px;
+    }
+
+    .responsive-span {
+        font-size: 30px; /* Adjust as needed */
+    }
+
+    .icon-image {
+        width: 35px; /* Adjust width as needed */
+        height: 35px; /* Adjust height as needed */
+    }
+
+    table {
+        font-size: 0.8em; /* Decrease font size for table content */
+    }
+
+    .sidebar {
+        flex-basis: 240px; /* Adjust sidebar width for smaller screens */
+    }
+
+    .sidebar a {
+        font-size: 0.8em; /* Reduce font size for sidebar links */
+    }
+
+    .content {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .progress-bar {
+        width: 30px; /* Adjust progress bar size for smaller screens */
+        height: 30px;
+        border-width: 3px; /* Adjust border width accordingly */
+    }
+
+    .progress-text {
+        font-size: 0.8em; /* Reduce font size for progress text */
+    }
+
+    #exportButton {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        font-size: 12px; /* Reduce font size for button text */
+    }
+}
