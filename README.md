@@ -9,3 +9,6 @@ TODO:
 - horizontal scrollbar always visible
 - set the minimum column width in the exported table
 - option - show/hide menu
+- enable manual resizing of column widths in a table
+- info for table attributes
+- manipulate with config data
